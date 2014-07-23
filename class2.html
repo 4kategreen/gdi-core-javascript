@@ -22,7 +22,7 @@
 		<!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
 
 		<!-- If use the PDF print sheet so students can print slides-->
-		
+
 		<link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
 
 		<!--[if lt IE 9]>
@@ -42,7 +42,7 @@
           <h3>Beginning Javascript</h3>
           <h4>Class 2</h4>
         </section>
-        
+
         <!-- Welcome-->
         <section>
           <h3>Welcome!</h3>
@@ -57,7 +57,7 @@
           </ul>
           </div>
         </section>
-        
+
         <!-- Loops-->
         <section>
           <h3>Loops</h3>
@@ -69,7 +69,7 @@
             <li class = "fragment">Adding images to a slideshow</li>
           </ul>
         </section>
-        
+
          <section>
           <h3>The while loop</h3>
           <p>The while loop tells JS to repeat statements while a condition is true:</p>
@@ -94,7 +94,7 @@
             <p>The loop will never end!!</p>
           </div>
         </section>
-        
+
         <section>
           <h3>The for loop</h3>
           <p>The for loop is a safer way of looping</p>
@@ -112,7 +112,7 @@
             Less danger of an infinite loop. All conditions are at the top!
           </div>
         </section>
-          
+
         <!-- Arrays -->
         <section>
           <h3>Array</h3>
@@ -136,10 +136,10 @@ var luckyThings = ['Rainbows', 7, 'Horseshoes'];
             </code></pre>
           </div>
         </section>
-        
+
         <section>
           <h3>Arrays -- returning values</h3>
-          <p class = "fragment">You can access items with "bracket notation".</p> 
+          <p class = "fragment">You can access items with "bracket notation".</p>
           <div class = "fragment">
             The number inside the brackets is called an "index"
             <pre><code contenteditable class = "javascript">
@@ -155,7 +155,7 @@ var luckyThings = ['Rainbows', 7, 'Horseshoes'];
             </code></pre>
           </div>
         </section>
-        
+
         <section>
           <h3>Arrays -- updating values</h3>
           <div class = "fragment">
@@ -171,7 +171,7 @@ var luckyThings = ['Rainbows', 7, 'Horseshoes'];
           awesomeAnimals[4] = 'Corgis';
             </code></pre>
           </div>
-          
+
           <div class = "fragment">
          You can also use the push method:
             <pre><code contenteditable class = "javascript">
@@ -179,7 +179,7 @@ var luckyThings = ['Rainbows', 7, 'Horseshoes'];
             </code></pre>
           </div>
         </section>
-        
+
         <section>
           <h3>Loops and Arrays</h3>
           Use a for loop to easily look at each item in an array:
@@ -190,7 +190,23 @@ for (var i = 0; i < rainbowColors.length; i++) {
 }
           </code></pre>
         </section>
-        
+
+		<section>
+			<h3>Adding to a String</h3>
+			Sometimes you need to add to a string. For instance, if you're making a list. To
+			do that, you use add a '+' to your assignment operator:
+
+			<pre><code contenteditable class="javascript">
+var deckItems = 'Umbrella, chairs';
+
+deckItems+= ', table';
+deckItems+= ', bug spray';
+
+console.log(deckItems);
+'Umbrella, chairs, table, bug spray'
+			</code></pre>
+		</section>
+
         <!-- Exercise -->
         <section>
           <h3>Let's Develop It</h3>
@@ -203,13 +219,33 @@ for (var i = 0; i < rainbowColors.length; i++) {
             <li>Bonus -- add an 'and' in the sentence before the last item</li>
           </ul>
         </section>
-        
+
+        <section>
+            <h3>My Answer</h3>
+
+            <pre><code contenteditable class="javascript">
+function favoriteThings(){
+    var favoriteThings = ['dogs', 'running', 'beer', 'gardens full of veggies', 'busy days', 'lazy days'];
+    var result = 'My favorite things are: ';
+
+    for (var i = 0; i&lt;favoriteThings.length; i++){
+        if (i &lt; favoriteThings.length - 1){
+            result += favoriteThings[i] + ', ';
+        }else{
+            result += "and " + favoriteThings[i] + '.';
+        }
+    }
+    alert(result);
+}
+            </code></pre>
+        </section>
+
         <!-- Objects-->
         <section>
           <h3>Objects</h3>
           <p>Objects are a data type that let us store a collection of properties and methods.</p>
           <pre><code contenteditable class = "javascript">
-          var objectName = { 
+          var objectName = {
             propertyName: propertyValue,
             propertyName: propertyValue,
             ...
@@ -226,7 +262,7 @@ for (var i = 0; i < rainbowColors.length; i++) {
           </code></pre>
           </div>
         </section>
-        
+
         <section>
           <h3>Objects -- returning values</h3>
           <p>Access values of "properties" using "dot notation":</p>
@@ -239,14 +275,14 @@ for (var i = 0; i < rainbowColors.length; i++) {
         pet: "Snoopy"
       };
       </code></pre>
-          </div> 
+          </div>
           <div class = "fragment">
             <pre><code contenteditable class = "javascript">
           var pet = charlie.pet;
             </code></pre>
           </div>
         </section>
-        
+
         <section>
           <h3>Objects -- returning values</h3>
           <div class = "fragment">
@@ -262,7 +298,7 @@ for (var i = 0; i < rainbowColors.length; i++) {
             </code></pre>
           </div>
         </section>
-        
+
         <section>
           <h3>Objects -- changing values</h3>
           <p>Use dot or bracket notation with the assignment operator to change objects.</p>
@@ -285,14 +321,14 @@ for (var i = 0; i < rainbowColors.length; i++) {
           </code></pre>
           </div>
         </section>
-        
+
         <section>
           <h3>Arrays of Objects</h3>
           <p>Arrays can hold objects too!</p>
           <div class = "fragment">
             <pre><code contenteditable class = "javascript">
           var peanuts = [
-            {name: "Charlie Brown", 
+            {name: "Charlie Brown",
              pet: "Snoopy"},
             {name: "Linus van Pelt",
              pet: "Blue Blanket"}
@@ -309,13 +345,13 @@ for (var i = 0; i < rainbowColors.length; i++) {
           </code></pre>
           </div>
         </section>
-        
+
         <section>
           <h3>Objects in functions</h3>
           <p>You can pass an object into a function as a parameter</p>
           <pre><code contenteditable class = "javascript">
         var peanut ={
-          name: "Charlie Brown", 
+          name: "Charlie Brown",
           pet: "Snoopy"
           };
           </code></pre>
@@ -332,7 +368,7 @@ for (var i = 0; i < rainbowColors.length; i++) {
             </code></pre>
           </div>
         </section>
-        
+
         <!-- Exercise -->
         <section>
           <h3>Let's Develop It</h3>
@@ -345,7 +381,33 @@ for (var i = 0; i < rainbowColors.length; i++) {
             <li>Bonus -- make a separate functions that describe the friends</li>
           </ul>
         </section>
-        
+
+        <section>
+            <h3>My Answer</h3>
+            <pre><code contenteditable class="javascript">
+function myFriends() {
+    var friends = [
+        {name: 'Santa Claus',
+        hair: 'red'},
+        {name: 'Easter Bunny',
+        hair: 'brown'},
+        {name: 'Tooth Fairy',
+        hair: 'blue'}
+    ];
+    var results = "My friends: ";
+
+    for(var i = 0; i &lt; friends.length; i++){
+        results += describeFriend(friends[i]);
+    }
+    alert(results);
+}
+
+function describeFriend(friend) {
+    return "My friend " + friend.name + " has " + friend.hair + " hair. ";
+}
+            </pre></code>
+        </section>
+
         <!-- DOM -->
         <section>
           <h3>DOM</h3>
@@ -356,12 +418,12 @@ for (var i = 0; i < rainbowColors.length; i++) {
           </ul>
           <img src = "images/dom.png" class = "fragment">
         </section>
-        
+
         <section>
           <h3>DOM Interaction</h3>
           <p class = "fragment">On every webpage, the document object gives us ways of accessing and changing the DOM.</p>
-          <p class = "fragment left-align">Every DOM "node" has properties. They are connected like a family tree.</p>   
-          <p class = "fragment left-align"> Parent (parentNode), children (childNodes, firstChild), siblings (prevSibling, nextSibling)</p> 
+          <p class = "fragment left-align">Every DOM "node" has properties. They are connected like a family tree.</p>
+          <p class = "fragment left-align"> Parent (parentNode), children (childNodes, firstChild), siblings (prevSibling, nextSibling)</p>
           <div class = "fragment">
             <pre><code contenteditable class = "javascript">
   var bodyNode = document.body; // &lt;body>
@@ -374,7 +436,7 @@ for (var i = 0; i < rainbowColors.length; i++) {
           </code></pre>
           </div>
         </section>
-        
+
         <section>
           <h3>DOM Interaction: Easier</h3>
           <p class = "fragment blue">Finding every element on the page by siblings and children is time consuming!</p>
@@ -385,11 +447,11 @@ for (var i = 0; i < rainbowColors.length; i++) {
 &lt;img id="mainpicture" src="http://girldevelopit.com/assets/pink-logo.png">
             </code></pre>
             <pre><code contenteditable class = "javascript">
-var img = document.getElementById('mainpicture');            
+var img = document.getElementById('mainpicture');
             </code></pre>
           </div>
         </section>
-        
+
         <section>
           <h3>DOM Interaction: Easier</h3>
           <div class = "fragment">
@@ -406,7 +468,7 @@ var img = document.getElementById('mainpicture');
           </code></pre>
           </div>
         </section>
-        
+
         <!-- Methods-->
         <section>
           <h3>Methods</h3>
@@ -422,7 +484,7 @@ var img = document.getElementById('mainpicture');
             </code></pre>
           </div>
         </section>
-        
+
         <!-- Attributes-->
         <section>
           <h3>DOM Nodes -- Attributes</h3>
@@ -434,7 +496,7 @@ var img = document.getElementById('mainpicture');
  img.getAttribute('src');
  img.setAttribute('src', 'http://girldevelopit.com/assets/pink-logo.png');
             </code></pre>
-            
+
             <pre><code contenteditable class = "javascript">
  var img = document.getElementById('mainpicture');
  img.getAttribute('class');
@@ -442,7 +504,7 @@ var img = document.getElementById('mainpicture');
             </code></pre>
           </div>
         </section>
-        
+
         <!-- Inner HTML-->
         <section>
           <h3>DOM innerHTML</h3>
@@ -465,7 +527,7 @@ document.body.innerHTML += "...just adding this bit at the end of the page.";
           </code></pre>
         </div>
         </section>
-        
+
         <!-- Create element and append child-->
         <section>
           <h3>DOM Modifying</h3>
@@ -492,9 +554,9 @@ newParagraph.appendChild(paragraphText);
 document.body.appendChild(newParagraph);
       </code></pre>
           </div>
-          
+
         </section>
-        
+
         <!-- Exercise-->
         <section>
           <h3>Let's Develop It</h3>
