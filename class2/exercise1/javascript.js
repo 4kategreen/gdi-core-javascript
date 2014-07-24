@@ -47,3 +47,25 @@ function calculate() {
   BONUS
   -Make a separate functions that describe the friends
 */
+
+
+/**
+  Exercise 3
+  Modify your existing functions above to add new elements to the screen instead of fire an alert.
+
+  Be creative! There's no "right" answer here as long as you're displaying the information.
+
+  // Find elements, get or set attributes
+  var listItems = document.getElementsByTagName('li');
+  var img = document.getElementById('mainpicture');
+  img.getAttribute('src');
+  img.setAttribute('src', 'http://girldevelopit.com/assets/pink-logo.png');
+
+  // Add html to the page
+  document.body.innerHTML = '<p>I changed the whole page!</p>';
+  document.body.innerHTML += "...just adding this bit at the end of the page.";
+
+  // Create a new element and add it to the page
+  var newImg = document.createElement('img');
+  newImg.src = 'http://girldevelopit.com/assets/pink-logo.png';
+  document.body.appendChild(newImg);

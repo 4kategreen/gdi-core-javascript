@@ -19,7 +19,7 @@ function calculate() {
 
 // Exercise 1
 function favoriteThings() {
-    var favoriteThings = ['Rabbits', 'Orange', 'Yogurt', 'Brussel Sprouts', 'Otters'];
+    var favoriteThings = ['Dogs', 'Running', 'Gardens full of food', 'Tortilla Chips', 'Hiking'];
     var result = 'My favorite things are: ';
 
     for (var i = 0; i<favoriteThings.length; i++){
@@ -56,8 +56,31 @@ function describeFriend(friend) {
 }
 
 /*
-    HTML Additions
+    HTML Additions (exercise 1 and 2, respectively)
 
     <a href="#" onclick="favoriteThings()">See my favorite things</a><br>
-    <a href="#" onclick ="myFriends()">My friends</a>
+    <a href="#" onclick="myFriends()">My friends</a>
+
+    Exercise 3 Model
 */
+function myFriends() {
+    var friends = [
+        {name: 'Santa Claus',
+        hair: 'red'},
+        {name: 'Easter Bunny',
+        hair: 'brown'},
+        {name: 'Tooth Fairy',
+        hair: 'blue'}
+    ];
+    var results = "My friends: ";
+
+    for(var i = 0; i < friends.length; i++){
+        results += describeFriend(friends[i]);
+    }
+
+    //alert(results);
+    
+    var friends = document.createElement('h3');
+    friends.text = results;
+    document.body.appendChild(friends);
+}
