@@ -69,3 +69,4 @@ function calculate() {
   var newImg = document.createElement('img');
   newImg.src = 'http://girldevelopit.com/assets/pink-logo.png';
   document.body.appendChild(newImg);
+  */
