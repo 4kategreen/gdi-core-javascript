@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+
+  <h1>Exercise 1: My Friends</h1>
+  <div id="friends"></div>
+
+  <h1>Exercise 2: Baseball Championships</h1>
+  <canvas id="championships" width="1200" height="600"></canvas>
+
+  <script src="js/Chart.js"></script>
+  <script>
+    // Exercise 1
+    var exercise1 = function exercise1() {
+      var myFriends = [
+        {
+          name: 'Kate',
+          age: 35,
+          favoriteTeam: 'Nationals',
+        }, {
+          name: 'Brian',
+          age: 33,
+          favoriteTeam: 'Giants',
+        }, {
+          name: 'Joe',
+          age: 52,
+          favoriteTeam: 'Athletics',
+
+        }
+      ];
+
+      var statement = '<p>I have friends who like baseball.</p><ul>';
+      for (var i=0; i<myFriends.length; i++) {
+        friend = myFriends[i];
+        statement+= '<li>' + friend.name + ' is ' + friend.age + ' and likes the ' + friend.favoriteTeam + '. </li>';
+      }
+
+      var div = document.createElement('div');
+      div.innerHTML = statement;
+      document.getElementById('friends').appendChild(div);
+    }
+
+    exercise1();
+
+    // Exercise 2
+    var exercise2 = function exercise2() {
+      var championshipData = [
+        { team: 'New York Yankees', championships: 27 },
+        { team: 'St. Louis Cardinals', championships: 11 },
+        { team: 'Oakland Athletics', championships: 9 },
+        { team: 'Boston Red Sox', championships: 8 },
+        { team: 'San Francisco Giants', championships: 7 },
+        { team: 'Los Angeles Dodgers', championships: 6 },
+        { team: 'Cincinnati Reds', championships: 5 },
+        { team: 'Pittsburgh Pirates', championships: 5 },
+        { team: 'Detroit Tigers', championships: 4 },
+        { team: 'Atlanta Braves', championships: 3 },
+        { team: 'Baltimore Orioles', championships: 3 },
+        { team: 'Minnesota Twins', championships: 3 },
+        { team: 'Chicago White Sox', championships: 3 },
+        { team: 'Cleveland Indians', championships: 2 },
+        { team: 'Philadelphia Phillies', championships: 2 },
+        { team: 'Chicago Cubs', championships: 2 },
+        { team: 'New York Mets', championships: 2 },
+        { team: 'Toronto Blue Jays', championships: 2 },
+        { team: 'Miami Marlins', championships: 2 },
+        { team: 'Kansas City Roys', championships: 1 },
+        { team: 'Arizona Diamondbacks', championships: 1 },
+        { team: 'Los Angeles Angels of Anaheim', championships: 1 },
+        { team: 'San Diego Padres', championships: 0 },
+        { team: 'Texas Rangers', championships: 0 },
+        { team: 'Colorado Rockies', championships: 0 },
+        { team: 'Houston Astros', championships: 0 },
+        { team: 'Milwaukee Brewers', championships: 0 },
+        { team: 'Tampa Bay Rays', championships: 0 },
+        { team: 'Washington Nations', championships: 0 },
+        { team: 'Seattle Mariners', championships: 0 }
+      ];
+
+      // Variables for the chart dataset.
+      var teams = new Array,
+          championships = new Array,
+      // Chart object
+          ctx = document.getElementById('championships').getContext("2d");
+
+      // Get the teams and championship data
+      // Iterate over the array of objects: Another way! or use the for loop you already know.
+      championshipData.forEach(function(element) {
+        teams.push(element.team);
+        championships.push(element.championships);
+      });
+
+      // Chart Data Variable. What goes to chart js
+      var data = {
+        labels: teams,
+        datasets: [
+          {
+            label: "World Series Winners",
+            fillColor: "red",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: championships
+          }
+        ]
+      }
+
+      // Make a chart!
+      var championshipChart = new Chart(ctx).Bar(data);
+    }
+
+    exercise2();
+  </script>
+</body>
+</html>

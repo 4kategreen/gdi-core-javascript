@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Project Day: Graphs</h1>
+
+    <h2>Array of Objects</h2>
+    <p>
+      Make an array of objects that you can graph later on. This can be anything that will look nice on a graph. Ages, height, baseball team championships. Be creative!
+    </p>
+    <div class="alert alert-info">
+      <pre>
+        <code>
+          var myObjects = [
+            {
+              name: 'Kate',
+              type: 'human'
+            }, {
+              name: 'Sara',
+              type: 'dog'
+            }, {
+              name: 'Pumpkin',
+              type: 'cat'
+            }
+          ];
+        </code>
+      </pre>
+      Find my example of this exercise <a href="index.html">here</a>!
+    </div>
+    <ol>
+      <li>Create an html file where you can open it in your browser.</li>
+      <li>Create a script tag at the bottom of the body (before it closes). You'll work here</li>
+      <li>Create an array of objects that you thought up earlier.</li>
+      <li>Using the <code>for</code> loop, iterate over your objects and create a string with your object's data that you'll append to the html</li>
+      <li>Create an element, put the string you created in the new element's html and then append it to the <code>document.body</code></li>
+    </ol>
+    <div class="alert alert-info">
+      <pre>
+        <code>
+          var myArray = ['this','that','something'],
+              myString = '';
+
+          for (var i=0; i&lt;myArray.length; i++) {
+            myString+= 'my array value is ' + myArray[i];
+          }
+
+          var ele = document.createElement('div');
+          ele.html = 'This value is ' + myString + '. ';
+          document.body.append(ele);
+        </code>
+      </pre>
+    </div>
+
+    <h2>Graphs!</h2>
+    <p>
+      Next, we'll make a graph of the data we just created. This requires a third party library, <a href="http://www.chartjs.org/">ChartJS</a>. Check out the site, see if you can figure out what you'll need to do to make a chart of your own. Check out the documentation for the type of graph you want to make, see how the data needs to be organized.
+    </p>
+    <p>
+      Check out <a href="index.html">my example</a>. View the source and check out my function <code>exercise2()</code>. This will give you an idea of what you'll be doing (though I did a bit more than you need to).
+    </p>
+
+    <ol>
+      <li>First, add a <code>script</code> tag above the one you made for the first exercise. Make the <code>src</code>: <code>http://kategreen.us/gdi/graphday/js/Chart.js</code>. Don't forget to close the tag!</li>
+      <li>Next, add a <code>canvas</code> tag with an <code>id</code> in your html file.</li>
+      <li>Experiment with creating a chart with the example data in the documentation. Once you make it work in your file, you can move on to using your own data.</li>
+      <div class="alert alert-danger">
+        <pre><code>
+          var ctx = document.getElementById('myGraphCanvasChangeMe').getContext("2d"),
+              myLineChart = new Chart(ctx).Line(data, options);
+        </code></pre>
+        <p>You don't need to have the <code>options</code> variable here unless you're doing something with it!</p>
+      </div>
+      <li>We need to make our data consumable by the chart app, so we will need to make new objects. You can do it by hand or manipulate the one you made before, like I did. The second one is more of a challenge. Figure out what you need to do to put your data into the <code>data</code> variable.</li>
+    </ol>
+
+    <h3>Challenges</h3>
+    <ol>
+      <li>Can you edit the options to change the defaults?</li>
+      <li>Can you change the colors of your graphs?</li>
+      <li>Can you add another dataset, like in the line and bar graphs?</li>
+      <li>What else can you graph?</li>
+    </ol>
+
+  </div>
+  <footer class="navbar navbar-default">
+    Something
+  </footer>
+</body>
+</html>
