@@ -118,31 +118,32 @@
           <div class = "fragment">
           Include the the live library:
           <pre><code contenteditable class = "html">
-  &lt;head>
-    &lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js">
+  &lt;body>
+    (All the rest of your html)
+    &lt;script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js">
     &lt;/script>
-  &lt;/head>
+  &lt;/body>
           </code></pre>
           </div>
           <div class = "fragment">
-            Note: live code can change! It's always best to download
+            Note: live code can change! It's always best to download if you're using it on a "real" site.
           </div>
         </section>
         
         <!-- Selectors-->
         <section>
           <h3>jQuery Selectors</h3>
-          <p>Remember <span class = "green">document.getElementById()</span> and <span class = "green">documet.getElementsByTagName()</span>? </p>
+          <p>Remember <span class = "green">document.getElementById()</span> and <span class = "green">document.getElementsByTagName()</span>? </p>
           <p class = "fragment"> jQuery selectors let you get elements by: </p>
           <ul>
-            <li class = "fragment">Element name (div, p)
-            <pre><code contenteditable class = "javascript">
-      var divs = $("div"); // All divs on page
-            </code></pre>
-            </li>
             <li class = "fragment">ID name (#mainpicture, #results)
             <pre><code contenteditable class = "javascript">
 var img = $("#mainpicture"); //img with id mainpicture
+            </code></pre>
+            </li>
+            <li class = "fragment">Element name (div, p)
+            <pre><code contenteditable class = "javascript">
+      var divs = $("div"); // All divs on page
             </code></pre>
             </li>
             <li class = "fragment">Class name (.result, .picture)
@@ -239,7 +240,7 @@ var images = $(".picture"); //All images with class picture
         </section>
         
         <section>
-          <h3>Creating new element</h3>
+          <h3>Creating a new element</h3>
           <div class = "fragment">
             <pre><code contenteditable class = "javascript">
     var newDiv = $('&lt;div>&lt;/div>');
@@ -255,6 +256,12 @@ var images = $(".picture"); //All images with class picture
           <h3>Let's Develop It!</h3>
           <p>Try to convert last week's DOM interaction into jQuery.</p>
           <p>Don't forget to include jQuery in your html head!</p>
+          <pre><code contenteditable class="javascript">
+
+      var friends = document.createElement('h3');
+      friends.text = 'I have a lot of friends. Promise.';
+      document.body.appendChild(friends);
+        </code></pre>
         </section>
         
         <!-- Document Ready-->
@@ -363,7 +370,6 @@ var images = $(".picture"); //All images with class picture
             <li>Bind events to the div in your javascript file</li>
             <li>Don't forget to surround your events with document ready</li>
             <li>Try to change size, color, or event the html inside the div</li>
-            <li>Bonus: change all the onclick events to jQuery click events</li>
           </ul>
         </section>
         
