@@ -7,7 +7,7 @@ function calculate() {
     var oldAge = 85;
     var perDay = 35;
 
-    var days = (oldAge - age) * 356;
+    var days = (oldAge - age) * 365;
     var total = perDay * days;
 
     if (total > 40000) {
@@ -23,11 +23,7 @@ function favoriteThings() {
     var result = 'My favorite things are: ';
 
     for (var i = 0; i<favoriteThings.length; i++){
-        if (i < favoriteThings.length - 1){
             result += favoriteThings[i] + ', ';
-        }else{
-            result += "and " + favoriteThings[i] + '.';
-        }
     }
     alert(result);
 }
@@ -79,7 +75,7 @@ function myFriends() {
     }
 
     //alert(results);
-    
+
     var friends = document.createElement('h3');
     friends.text = results;
     document.body.appendChild(friends);

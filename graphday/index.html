@@ -29,7 +29,6 @@
           name: 'Joe',
           age: 52,
           favoriteTeam: 'Athletics',
-
         }
       ];
 
@@ -38,6 +37,7 @@
         friend = myFriends[i];
         statement+= '<li>' + friend.name + ' is ' + friend.age + ' and likes the ' + friend.favoriteTeam + '. </li>';
       }
+      statement+= '</ul>';
 
       var div = document.createElement('div');
       div.innerHTML = statement;
@@ -107,7 +107,7 @@
             data: championships
           }
         ]
-      }
+      };
 
       // Make a chart!
       var championshipChart = new Chart(ctx).Bar(data);
